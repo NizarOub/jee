@@ -8,8 +8,10 @@ import java.util.Date;
 import java.util.List;
 
 @RestController
+@RequestMapping("/api")
 public class AccountRestControler {
     private BankAccountRepository bankAccountRepository;
+
     public AccountRestControler(BankAccountRepository bankAccountRepository){
         this.bankAccountRepository=bankAccountRepository;
     }
@@ -42,4 +44,5 @@ public class AccountRestControler {
     public void deleteAccount(@PathVariable String id){
         bankAccountRepository.deleteById(id);
     }
+
 }
